@@ -112,6 +112,8 @@ int knight(int currentRow[], int currentColumn[], int board[][8], int counter, i
 int minAccessibilityNum(int currentRow[], int currentColumn[], int board[][8], int accessibility[][8], int aroundKnight[]);
 size_t position(int result, int aroundKnight[]);
 int minimumArrayElementGreaterThanZero(int aroundKnight[]);
+int horizontal[] = {2, 1, -1, -2, -2, -1, 1, 2};
+int vertical[] = {-1, -2, -2, -1, 1, 2, 2, 1};
 
 int main(void) {
 	for (size_t row = 0; row < 8; ++row)
@@ -154,8 +156,6 @@ int main(void) {
 }
 		
 int knight(int currentRow[], int currentColumn[], int board[][8], int counter, int accessibility[][8]) {
-	int horizontal[] = {2, 1, -1, -2, -2, -1, 1, 2};
-	int vertical[] = {-1, -2, -2, -1, 1, 2, 2, 1};
 	int aroundKnight[8] = {};
 
 	int result = minAccessibilityNum(currentRow, currentColumn, board, accessibility, aroundKnight);
@@ -177,9 +177,6 @@ int knight(int currentRow[], int currentColumn[], int board[][8], int counter, i
 }
 
 int minAccessibilityNum(int currentRow[], int currentColumn[], int board[][8], int accessibility[][8], int aroundKnight[]) {
-	int horizontal[] = {2, 1, -1, -2, -2, -1, 1, 2};
-	int vertical[] = {-1, -2, -2, -1, 1, 2, 2, 1};
- 
 	for (size_t j = 0; j < 8; ++j) {
         	int nextRow = currentRow[0] + vertical[j];
         	int nextColumn = currentColumn[0] + horizontal[j];
