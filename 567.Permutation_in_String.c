@@ -58,8 +58,10 @@ bool checkInclusion(char* s1, char* s2) {
 		int t = 1;
 		
 		for (int j = 0; j < 26; j++)
-			if (t1[j] != t2[j])
+			if (t1[j] != t2[j]) {
 				t = 0;
+				break;
+			}
 
 		if (t)
 			return true;
